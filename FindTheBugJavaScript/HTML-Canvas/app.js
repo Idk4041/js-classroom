@@ -26,6 +26,7 @@ function getCanvas() {
     function draw(event) {
       //if not painting , then return
       if (!painting) return;
+      
 
       ctx.lineWidth = rangeElement.value;
       ctx.lineCap = "round";
@@ -39,7 +40,7 @@ function getCanvas() {
     }
 
     window.addEventListener("mousedown", startDrawing);
-    window.addEventListener("mouseup", startDrawing);
+    window.addEventListener("mouseup", stopDrawing);
     window.addEventListener("mousemove", draw);
   } else {
     console.log(`brower doesn't support canvas`);
